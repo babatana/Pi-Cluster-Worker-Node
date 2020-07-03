@@ -66,6 +66,14 @@
       line: "172.27.1.2:/HDMPI /HDMPI nfs defaults 0 0"
       state: present
       backup: yes 
+  
+  - name: "Configure /etc/fstab"
+    become: yes
+    lineinfile: 
+      path: /etc/fstab
+      line: "172.27.1.2:/home/*/.ssh /home/{{ ansible_facts['user_id'] }}/.ssh  nfs defaults 0 0"
+      state: present
+      backup: yes 
 
   - name: "Mount everything"
     become: yes
