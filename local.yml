@@ -107,5 +107,18 @@
 
 
 #++++++++++++++++++++++++++++++++++++++
+#Modifying /etc/dhcpcd.conf
+
+- name: Modifying /etc/dhcpcd.conf
+  become: yes
+  blockinfile:
+    path: /etc/dhcpcd.conf
+    block: |
+      
+      interface eth1
+      metric 301
+      static routers=172.27.1.1
+      static domain_name_servers=172.27.1.1
+      nolink
 
 # log out and back in for nfs mounting to happen?
