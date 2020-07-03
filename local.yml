@@ -22,6 +22,7 @@
 
 #++++++++++++++++++++++++++++++++++++++
   # passwordless ssh
+  
   - name: "Create the .shh directory" 
     file:
       path: "{{ ansible_facts['user_dir'] }}/.ssh"
@@ -56,8 +57,7 @@
 
 
 #++++++++++++++++++++++++++++++++++++++
-# setting up nfs
-   
+# setting up nfs 
 
   - name: "Configure /etc/fstab"
     become: yes
