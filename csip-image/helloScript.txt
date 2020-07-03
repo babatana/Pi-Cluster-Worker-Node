@@ -1,4 +1,0 @@
-This is how Bourne Again Shells work!
-This line should be appended to the rest of the file
-
-hey
