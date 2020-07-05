@@ -75,7 +75,7 @@
       state: present
       backup: yes 
 
-  - name: "Mount everything"
+  - name: "Mount HDMPI"
     become: yes
     mount:
       path: /HDMPI
@@ -83,7 +83,7 @@
       fstype: nfs
       state: mounted
       
-  - name: "Mount everything"
+  - name: "Mount .ssh"
     become: yes
     mount:
       path: /home/{{ ansible_facts['user_id'] }}/.ssh
